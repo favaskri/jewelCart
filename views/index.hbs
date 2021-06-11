@@ -1,0 +1,49 @@
+<section class="container mt-5">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <div class="row">
+
+        {{#each products}}
+        <div class="col-6 col-md-3 col-lg-2">
+            <div class="card">
+
+
+                <div class="img-container">
+
+                    <a href="index.php?post=<?php echo $pl['title']?>"><img src="{{this.img}}" alt="Titre 1"
+                            class="card-img-top"></a>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h5 class="title">{{this.name}}</h5>
+                    <h9 class="design">{{this.design}}</h9><br>
+                    <h8 class="price">{{this.price}}</h8><br>
+                    <h8 class="discount">{{this.discount}}</h8><br>
+
+
+                    <a href="#" class="btn-sm btn-primary">Add to Cart</a>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        {{/each}}
+
+
+
+    </div>
+
+
+
+
+
+
+</section>
+
+
