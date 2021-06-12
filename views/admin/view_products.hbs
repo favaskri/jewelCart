@@ -1,6 +1,11 @@
 <section>
     <div class="container">
-        <table class="table table-striped">
+        <div class="row mt-4">
+            <a href="admin/add_product" class="btn btn-success ml-auto" >Add Products</a>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-striped mt-4">
             <thead>
                 <tr>
                     <th scope="col">Sr_No</th>
@@ -16,7 +21,7 @@
 
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{@index}}.</th>
                     <td>{{this.name}}</td>
                     <td>{{this.design}}</td>
                     <td>{{this.price}}</td>
