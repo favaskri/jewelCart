@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sr_No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Design</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Image</th>
+
+                </tr>
+            </thead>
+            {{#each products}}
+
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.design}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.discount}}</td>
+                    <td><img style="width:50px; height=50px" src="{{this.img}}" alt=""</td>
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+    </div>
+</section>
