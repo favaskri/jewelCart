@@ -1,0 +1,91 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+    id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<section>
+    <div class="container">
+        <div class="span6">
+            <div class="area">
+                <form class="form-horizontal" action="/signup" method="post">
+                    <div class="heading">
+                        <h4 class="form-heading">Sign Up</h4>
+                    </div>
+
+
+
+                    <div class="control-group">
+                        <label class="control-label"  for="inputFirst">First
+                            Name</label>
+
+                        <div class="controls">
+                            <input id="inputFirst" name="first_name" placeholder="E.g. Ashwin" type="text">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputLast">Last
+                            Name</label>
+
+                        <div class="controls">
+                            <input id="inputLast" name="Last_name" placeholder="E.g. Hegde" type="text">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email</label>
+
+                        <div class="controls">
+                            <input id="inputEmail" name="email" placeholder="E.g. ashwinh@cybage.com" type="text">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputUser">Username</label>
+
+                        <div class="controls">
+                            <input id="inputUser" name="user_name"placeholder="E.g. ashwinhegde" type="text">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Password</label>
+
+                        <div class="controls">
+                            <input id="inputPassword" name="password"placeholder="Min. 8 Characters" type="password">
+                        </div>
+                    </div>
+                    {{!-- <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
+
+
+                    </div> --}}
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox"><input type="checkbox" name="check_box" >
+                                I agree all your <a href="#">Terms of
+                                    Services</a></label>
+                            <button class="btn btn-success" type="submit">Sign
+                                Up</button>
+                            <button name="help" class="btn" type="button">Help</button>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <button class="close" name="alert" data-dismiss="alert" type="submit">×</button>
+                        <strong>Confirmation:</strong>
+                        A confirmation email has been sent to your
+                        email.<br>
+                        Thank you for your registration.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+

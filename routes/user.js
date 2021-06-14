@@ -1,65 +1,39 @@
 var express = require('express');
 var router = express.Router();
+const productHelper = require('../helpers/product_helpers')
+const usersHelpers =require('../helpers/user_helper')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let products=[
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"35000",
-      discount:"25%",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kwA2SbRu3LsOawfm8UEULPmM9rMCXMSVA8Wi5JOLniLRcejLOJo8bukeK28fzkLXl8cAQZ5OZg&usqp=CAc"
+  productHelper.getAllProducts().then((products)=>{
+    console.log(products)
+    res.render('./user/view_products',{products});
+    
+  })
+  
 
-
-    },
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"35060",
-      discount:"25%",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kwA2SbRu3LsOawfm8UEULPmM9rMCXMSVA8Wi5JOLniLRcejLOJo8bukeK28fzkLXl8cAQZ5OZg&usqp=CAc"
-
-
-    },
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"35800",
-      discount:"25%",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kwA2SbRu3LsOawfm8UEULPmM9rMCXMSVA8Wi5JOLniLRcejLOJo8bukeK28fzkLXl8cAQZ5OZg&usqp=CAc"
-
-
-    },
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"95000",
-      discount:"25%",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kwA2SbRu3LsOawfm8UEULPmM9rMCXMSVA8Wi5JOLniLRcejLOJo8bukeK28fzkLXl8cAQZ5OZg&usqp=CAc"
-
-
-    },
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"3500",
-      discount:"25%",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kwA2SbRu3LsOawfm8UEULPmM9rMCXMSVA8Wi5JOLniLRcejLOJo8bukeK28fzkLXl8cAQZ5OZg&usqp=CAc"
-
-
-    },
-    {
-      name:"Finger Ring",
-      design:"Casting",
-      price:"3000",
-      discount:"25%",
-      img:"https://images.melorra.com/image/upload/fl_progressive,h_350,w_350,c_limit,f_auto,q_auto/v1595527037/live-melorra/dev/catalogue/images/DB/OPT/580/W20CDB37F_C_580.jpg"
-
-
-    }
-  ]
-  res.render('index',{products , admin:false});
+  
 });
+
+router.get('/login', (req, res)=>{
+  
+  res.render('user/login')
+})
+router.get("/signup",(req, res)=>{
+  res.render('user/signup')
+})
+router.post('/signup',(req, res)=>{
+ 
+
+  usersHelpers.doSignup(req.body).then((response)=>{
+    console.log(response)
+
+  })
+   
+
+    
+
+  
+})
 
 module.exports = router;
