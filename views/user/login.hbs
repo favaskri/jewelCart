@@ -20,6 +20,9 @@
                     <a href="/signup" class="float-right btn btn-outline-primary"  >Sign up</a>
                     <h4 class="card-title mb-4 mt-1">Sign in</h4>
                     <form method="post"  >
+                        {{#if loginErr}}
+                        <p class="form-group" style="color:red"> {{loginErr}}</p>
+                        {{/if}}
                         <div class="form-group">
                             <label>Your email</label>
                             <input  class="form-control" required name="email" placeholder="Email" id="email" type="email">
