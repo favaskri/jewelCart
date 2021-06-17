@@ -44,6 +44,9 @@ router.post('/signup', (req, res) => {
 
 
   usersHelpers.doSignup(req.body).then((response) => {
+    req.session.LoggedIn= true
+    req.session.user=response
+    res.redirect('/')
     console.log(response)
 
   })
@@ -72,8 +75,17 @@ router.get('/logOut', (req, res)=>{
   req.session.destroy()
   res.redirect('/')
 })
-router.get('/cart',verifyLogin, (req, res)=>{
-  res.render("user/cart")
-})
+router.get('/cart',verifyLogin, async(req, res)=>{
+  let products =await usersHelpers.getCartProduct(req.session.user._id)
+  
 
+  console.log("products  :"+products)
+  res.render("user/cart",{products})
+})
+router.get('/addToCart/:id',verifyLogin, (req, res)=>{
+  usersHelpers.addToCart(req.params.id,req.session.user._id).then(()=>{
+    
+    res.redirect('/')
+  })
+})
 module.exports = router;
