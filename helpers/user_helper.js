@@ -145,7 +145,8 @@ module.exports = {
 
 
             ]).toArray()
-            resolve(cartItems[0])
+            resolve(cartItems)
+            console.log(cartItems[0])
            
         })
     }
